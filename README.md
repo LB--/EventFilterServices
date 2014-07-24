@@ -43,7 +43,7 @@ First, you will want to add this as a dependency in your project. Add this to th
 Then, add this to the `dependencies` section:
 ```xml
 		<dependency>
-			<groupId>com.lb_stuff</groupId>
+			<groupId>com.lb_stuff.service</groupId>
 			<artifactId>ChatFilterService</artifactId>
 			<version>1.0.0</version>
 		</dependency>
