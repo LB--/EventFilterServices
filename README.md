@@ -84,4 +84,4 @@ Those of you that have used Gravity's `Updater` will notice that this is familia
 Now when you build your project and investigate the jar, you'll see that the `ChatFilterService` class is in your desired package and will not conflict with other plugins that also utilize it.
 
 ## Option 2: Just doing it by hand
-You could just download the java source file, place it into your project, and edit the `package` statement on the firs line lime some of you may have done with Gravity's `Updater`. If you prefer that, that's fine - I don't ;)
+You could just download the java source file, place it into your project, and edit the `package` statement on the first line like some of you may have done with Gravity's `Updater`. If you prefer that, that's fine - I don't ;)

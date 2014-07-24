@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.lb_stuff</groupId>
+	<groupId>com.lb_stuff.service</groupId>
 	<artifactId>ChatFilterService</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>ChatFilterService</name>
 	<url>https://github.com/LB--/ChatFilterService.java</url>
 	<licenses>
