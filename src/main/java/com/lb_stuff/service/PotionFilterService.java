@@ -169,6 +169,13 @@ public final class PotionFilterService implements Listener
 			{
 				intensities.put(pe, intensity);
 			}
+			if(intensities.isEmpty())
+			{
+				for(PotionEffect pe : potion.getEffects())
+				{
+					intensities.put(pe, intensity);
+				}
+			}
 		}
 
 		/**
