@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.lb_stuff.service</groupId>
 	<artifactId>PotionFilterService</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>PotionFilterService</name>
 	<url>https://github.com/LB--/PotionFilterService.java</url>
 	<licenses>

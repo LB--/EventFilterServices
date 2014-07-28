@@ -24,6 +24,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.HashSet;
 
 /**
  * This service listens to {@link org.bukkit.event.player.PotionSplashEvent}
@@ -201,7 +202,9 @@ public final class PotionFilterService implements Listener
 		}
 		public Set<PotionEffect> getEffects()
 		{
-			return intensities.keySet();
+			Set<PotionEffect> copy = new HashSet<>();
+			copy.addAll(intensities.keySet());
+			return copy;
 		}
 		public double getIntensity(PotionEffect effect)
 		{
