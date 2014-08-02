@@ -1,0 +1,32 @@
+
+name: "EventFilterServices"
+version: ${project.version}
+description: "An API for other plugins."
+#load: POSTWORLD
+main: com.lb_stuff.service.EventFilterServicesPlugin
+authors:
+  - "Nicholas \"LB\" Braden"
+website: http://dev.bukkit.org/bukkit-plugins/eventfilter/
+database: false
+depend: []
+prefix: "Event Filter"
+softdepend: []
+loadbefore: []
+
+commands:
+  EventFilters:
+    description: "Show which \xa7aservices\xa7r are \xa7aactive\xa7r."
+    usage: "/<command>"
+    permission: EventFilterServices.show-active
+    permission-message: "\xa7cYou do not have permission."
+    aliases:
+      - ef
+      - efs
+      - events
+      - filterservice
+      - eventfilterservice
+
+permissions:
+  EventFilterServices.show-active:
+    description: "Allows for displaying which services are being used."
+    default: op
