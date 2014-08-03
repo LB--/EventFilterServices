@@ -1,0 +1,16 @@
+# EventFilterServices Configuration, generated/updated by v${project.version}
+
+# If you want to reset any setting to default, simply delete it or
+# comment it out and the next time the config is reloaded, this file
+# will be re-generated keeping your existing settings and defaulting
+# any missing settings. Any comments you make are erased, however.
+
+# Set this to false to disable use of Gravity's Updater
+# http://forums.bukkit.org/threads/Gravity-Updater.96681/
+auto-updater: [%auto-updater%]
+
+# If you're a developer (or just curious), then set this to true for colorful console spam.
+debug: [%debug%]
+
+# This is updated automatically. Don't change it. Java will smite you if you do.
+this-is-the-config-version-number-dont-change-it-unless-you-want-very-bad-things-to-happen: [%version%]

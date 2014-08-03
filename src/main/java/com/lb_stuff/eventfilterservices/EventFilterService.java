@@ -1,6 +1,7 @@
-package com.lb_stuff.service;
+package com.lb_stuff.eventfilterservices;
 
 import org.bukkit.Bukkit;
+import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.ServicePriority;
@@ -36,4 +37,6 @@ public abstract class EventFilterService implements Listener
 	{
 		HandlerList.unregisterAll(this);
 	}
+
+	/*default*/ abstract Class<? extends Event>[] getEvents();
 }

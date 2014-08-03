@@ -1,4 +1,4 @@
-package com.lb_stuff.service;
+package com.lb_stuff.eventfilterservices;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -11,6 +11,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.ServicePriority;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -107,7 +108,7 @@ public final class ChatFilterService extends EventFilterService
 		 */
 		public ChatFilterService getService()
 		{
-			return Bukkit.getServicesManager().getRegistration(ChatFilterService.class).getProvider();
+			return getInst();
 		}
 
 		/**
@@ -239,5 +240,11 @@ public final class ChatFilterService extends EventFilterService
 		{
 			return handlers;
 		}
+	}
+
+	@Override
+	Class<? extends Event>[] getEvents()
+	{
+		return new Class[]{AsyncMessage.class};
 	}
 }

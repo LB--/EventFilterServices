@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.lb_stuff.service</groupId>
+	<groupId>com.lb_stuff.eventfilterservices</groupId>
 	<artifactId>EventFilterServices</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.0</version>
 	<name>EventFilterServices</name>
 	<url>https://github.com/LB--/EventFilterServices</url>
 	<licenses>
@@ -63,6 +63,32 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<artifactSet>
+								<includes>
+									<include>net.gravitydevelopment.updater:updater</include>
+								</includes>
+							</artifactSet>
+							<relocations>
+								<relocation>
+									<pattern>net.gravitydevelopment.updater</pattern>
+									<shadedPattern>com.lb_stuff.eventfilterservices.updater</shadedPattern>
+								</relocation>
+							</relocations>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>
@@ -92,6 +118,10 @@
 			<id>bukkit-repo</id>
 			<url>http://repo.bukkit.org/content/groups/public/</url>
 		</repository>
+		<repository>
+			<id>gravity-repo</id>
+			<url>http://repo.gravitydevelopment.net</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
@@ -100,6 +130,11 @@
 			<version>1.7.9-R0.2</version>
 			<type>jar</type>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.gravitydevelopment.updater</groupId>
+			<artifactId>updater</artifactId>
+			<version>2.2</version>
 		</dependency>
 	</dependencies>
 </project>

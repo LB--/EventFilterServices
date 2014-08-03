@@ -1,4 +1,4 @@
-package com.lb_stuff.service;
+package com.lb_stuff.eventfilterservices;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Event;

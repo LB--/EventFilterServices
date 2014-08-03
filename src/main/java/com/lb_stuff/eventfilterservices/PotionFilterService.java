@@ -1,4 +1,4 @@
-package com.lb_stuff.service;
+package com.lb_stuff.eventfilterservices;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
@@ -151,7 +151,7 @@ public final class PotionFilterService extends EventFilterService
 		 */
 		public PotionFilterService getService()
 		{
-			return Bukkit.getServicesManager().getRegistration(PotionFilterService.class).getProvider();
+			return getInst();
 		}
 
 		public ProjectileSource getSource()
@@ -260,5 +260,11 @@ public final class PotionFilterService extends EventFilterService
 			t.setShooter(this);
 			return t;
 		}
+	}
+
+	@Override
+	Class<? extends Event>[] getEvents()
+	{
+		return new Class[]{Splash.class};
 	}
 }
