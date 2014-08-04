@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.lb_stuff.eventfilterservices</groupId>
 	<artifactId>EventFilterServices</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>EventFilterServices</name>
 	<url>https://github.com/LB--/EventFilterServices</url>
 	<licenses>

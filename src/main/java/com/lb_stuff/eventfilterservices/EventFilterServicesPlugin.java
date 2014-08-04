@@ -20,6 +20,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.PluginDisableEvent;
+import org.bukkit.event.server.PluginEnableEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.RegisteredListener;
@@ -68,7 +69,7 @@ public final class EventFilterServicesPlugin extends JavaPlugin implements Liste
 			}
 			else
 			{
-				updater = new Updater(this, 0, getFile(), Updater.UpdateType.DEFAULT, false)
+				updater = new Updater(this, 83518, getFile(), Updater.UpdateType.DEFAULT, false)
 				{
 					@Override
 					public boolean shouldUpdate(String current, String potential)
@@ -218,9 +219,14 @@ ListenerLoop:
 	public void onDependencyChange(final DependencyChangeEvent e)
 	{
 		final EventFilterServices s = e.getServiceType();
+		final Plugin p = e.getPlugin();
 		if(e.getDependencyType() == INCOMPATIBLE)
 		{
-			getLogger().warning(e.getPlugin().getName()+" is incompatible with "+s.get().getClass().getSimpleName());
+			tell(getServer().getConsoleSender(),
+				""+GOLD+p.getName()+RESET+" v"+p.getDescription().getVersion()
+				+" is "+RED+"incompatible"+RESET
+				+" with "+AQUA+s.get().getClass().getSimpleName()+RESET+"!");
+			tell(getServer().getConsoleSender(), "See if there is a more up-to-date version available.");
 		}
 		Bukkit.getScheduler().runTask(this, new Runnable(){@Override public void run()
 		{
@@ -233,6 +239,31 @@ ListenerLoop:
 				s.get().stop();
 			}
 		}});
+	}
+	@EventHandler(priority = EventPriority.MONITOR)
+	public void onPluginEnable(PluginEnableEvent e)
+	{
+		Plugin plugin = e.getPlugin();
+		PluginDescriptionFile pd = plugin.getDescription();
+		String version = pd.getVersion();
+		switch(pd.getName())
+		{
+			case "KataParty":
+			{
+				String[] v = version.split("\\.");
+				if(v.length == 3)
+				{
+					int major = Integer.parseInt(v[0]);
+					int minor = Integer.parseInt(v[1]);
+					//int patch = Integer.parseInt(v[2]);
+					if(major <= 1 && minor < 3)
+					{
+						EventFilterServices.ChatFilter.depend(plugin, INCOMPATIBLE);
+					}
+				}
+			} break;
+			default: break;
+		}
 	}
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void onPluginDisable(PluginDisableEvent e)

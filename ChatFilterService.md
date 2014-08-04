@@ -66,7 +66,7 @@ Then, add this to the `dependencies` section:
 		<dependency>
 			<groupId>com.lb_stuff.eventfilterservices</groupId>
 			<artifactId>EventFilterServices</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 		</dependency>
 ```
 Refresh your project dependencies and it should be downloaded. You can now `import` it into your project and use it as in the examples above.

@@ -11,7 +11,8 @@ database: false
 depend: []
 prefix: "Event Filter"
 softdepend: []
-loadbefore: []
+# Some versions of some plugins are incompatible
+loadbefore: ["KataParty"]
 
 commands:
   EventFilters:
@@ -23,8 +24,9 @@ commands:
       - ef
       - efs
       - events
-      - filterservice
-      - eventfilterservice
+      - filters
+      - filterservices
+      - eventfilterservices
 
 permissions:
   EventFilterServices.show-active:
