@@ -154,7 +154,7 @@ public final class EventFilterServicesPlugin extends JavaPlugin implements Liste
 
 	private void tell(CommandSender cs, String msg)
 	{
-		cs.sendMessage(""+DARK_PURPLE+'['+LIGHT_PURPLE+"EventFilterServices"+DARK_PURPLE+']'+RESET+' '+msg);
+		cs.sendMessage(""+DARK_PURPLE+'['+LIGHT_PURPLE+"Event Filter"+DARK_PURPLE+']'+RESET+' '+msg);
 	}
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
