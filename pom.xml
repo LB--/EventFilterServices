@@ -96,6 +96,8 @@
 				<filtering>true</filtering>
 				<includes>
 					<include>plugin.yml</include>
+					<include>com/lb_stuff/eventfilterservices/config/config-defaults.yml</include>
+					<include>com/lb_stuff/eventfilterservices/config/config-template.yml</include>
 				</includes>
 			</resource>
 		</resources>

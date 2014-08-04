@@ -3,7 +3,7 @@ name: "EventFilterServices"
 version: ${project.version}
 description: "An API for other plugins."
 #load: POSTWORLD
-main: com.lb_stuff.service.EventFilterServicesPlugin
+main: com.lb_stuff.eventfilterservices.EventFilterServicesPlugin
 authors:
   - "Nicholas \"LB\" Braden"
 website: http://dev.bukkit.org/bukkit-plugins/eventfilter/
